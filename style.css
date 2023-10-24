@@ -17,13 +17,23 @@ body {
     max-width: 100%;
 }
 
+:root {
+    --gap: 10px;
+}
+
+@media all and (max-width: 400px) {
+    :root {
+        --gap: 10px;
+    }
+}
+
 #top-navigation ul {
-    width: calc(100vw - 60px);
-    margin-left: 30px;
-    height: 50px;
-    padding: 0 20px;
+    width: calc(100vw - (4 * var(--gap)));
+    margin-left: calc(2 * var(--gap));
+    height: 60px;
+    padding: 0 calc(2 * var(--gap));
     position: fixed;
-    top: 10px;
+    top: var(--gap);
     list-style: none;
     background-color: rgb(38, 59, 78);
     z-index: 10;
@@ -32,15 +42,17 @@ body {
 
 #top-navigation ul li {
     width: min(150px, 15vw);
-    height: 50px;
+    height: 60px;
     display: flex;
     float: right;
+    align-items: center;
+    border: 1px solid red;
 }
 
 #top-navigation ul .logo {
     float: left;
     width: min(200px, 25vw);
-    font-size: 125%;
+    font-size: 3vw;
     font-weight: bold;
 }
 
@@ -265,6 +277,8 @@ section {
 #biography {
     grid-column: 5 / 9;
     grid-row: 9 / 15;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color:rgba(255, 255, 255, 1);
@@ -286,12 +300,10 @@ section {
 
 #education-info > * > * {
     transform: skewX(-20deg);
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #about-preview > * > * {
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
 }
 
@@ -307,8 +319,8 @@ section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     height: 100%;
-    width: calc(100% - 120px);
-    margin: 0 60px;
+    width: calc(100% - 60px);
+    margin: 0 30px;
 }
 
 #university {
@@ -370,7 +382,7 @@ section {
 #logo:hover {
     left: 10px;
     filter: hue-rotate(210deg) saturate(200%) drop-shadow(-3px 5px 5px rgba(0, 0, 0, 0.5));
-    /*transform: scaleX(105%) scaleY(90%);*/
+    transform: scaleX(105%) scaleY(90%);
 }
 
 #education h3 {
@@ -446,6 +458,8 @@ section {
     list-style: none;
     font-size: 1.5vw;
 }
+
+
 
 .hyperlink {
     color: rgb(19, 60, 99);

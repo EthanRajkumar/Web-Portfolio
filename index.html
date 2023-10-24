@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content="" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mobileStyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&display=swap" rel="stylesheet">
     </head>
@@ -13,14 +13,24 @@
         <script src="main.js"></script>
         <header>
             <nav id="top-navigation">
-                <ul class="shadowed">
-                    <li class="logo"><a href="./index.html"><div class="text white">ETHAN RAJKUMAR</div></a></li>
-                    <li class="link hover-underline-animation"><a href="./contact.html"><div class="text white">CONTACT</div></a></li>
-                    <li class="link hover-underline-animation"><a href="./projects.html"><div class="text white">PROJECTS</div></a></li>
-                    <li class="link hover-underline-animation"><a href="./about.html"><div class="text white">ABOUT</div></a></li>
-                    <li class="link hover-underline-animation"><a href="./index.html"><div class="text white">HOME</div></a></li>
+                <ul class="drop-shadow">
+                    <li class="logo"><a href="./index.html"><h3 class="white">ETHAN RAJKUMAR</h3></a></li>
+                    <li class="link hover-underline-animation"><a href=""><p class="white">CONTACT</p></a></li>
+                    <!--<li class="link hover-underline-animation"><a href="./projects.html"><p class="white">PROJECTS</p></a></li>-->
+                    <li class="link hover-underline-animation"><a href="#about-preview"><p class="white">ABOUT</p></a></li>
+                    <li class="link hover-underline-animation"><a href="#landing"><p class="white">HOME</p></a></li>
                 </ul>
             </nav>
+
+            <!--<div id="animated-bg">
+                <video autoplay muted loop id="bg-video">
+                    <source src="Assets/blue_techscape.mp4" type="video/mp4"/>
+                </video>
+            </div>
+
+            <div id="background-credit">
+                <p>Background: <a href="https://www.youtube.com/@AAvfx">AA-VFX</a></p>
+            </div>-->
         </header>
 
         <main>
@@ -29,21 +39,21 @@
                     <div id="profile-background" class="shadowed">
                         <div>
                             <h1 class=""><span class="main-subtitle">HEY THERE! I'M</span><br>ETHAN RAJKUMAR</h1>
-                            <h2 class="">COMPUTER ENGINEERING STUDENT IN BOSTON, MA</h2>
-                            <p class=""><br>I'm a student with curiosity in all things computers. I may not be the only one, but here's what sets me apart.</p>
+                            <h3 class="">COMPUTER ENGINEERING STUDENT</h3>
                         </div>
+                        <p class="">I'm a student with curiosity in all things computers. I may not be the only one, but here's what sets me apart.</p>
                     </div>
                 </div>
-                <div id="learn-more" class="shadowed">
-                    <p>LEARN MORE</p>
-                    <div class="down-arrow"></div>
+                <div class="learn-more drop-shadow">
                     <a href="#about-preview"></a>
+                    <h2>LEARN MORE</h2>
+                    <div class="down-arrow"></div>
                 </div>
                 <div id="profile-photo"></div>
             </section>
 
             <section id="about-preview">
-                <div id="education">
+                <div id="education" class="drop-shadow-white">
                     <h2>Education</h2>
                     <div id="education-info">
                         <div id="university">
@@ -52,7 +62,7 @@
                                     <div id="spinner"></div>
                                 </a>
                             </div>
-                            <h3>Junior at WIT<a class="hyperlink" href="https://catalog.wit.edu/engineering/electrical-engineering/computer-engineering-bs/"><br>Computer<br>Engineering</a></h3>
+                            <h3>WIT Junior<a class="hyperlink" href="https://catalog.wit.edu/engineering/electrical-engineering/computer-engineering-bs/"><br>Computer Engineering</a></h3>
                         </div>
 
                         <div id="gpa">
@@ -77,11 +87,35 @@
                     </div>
                 </div>
 
-                <div id="biography">
+                <div id="biography" class="drop-shadow-white">
                     <h2>About Me</h2>
                     <p>I spent most of my life in Cape Town, South Africa, a city on the fast-track to modern industry. I've seen firsthand how technology can build and benefit a community, and want to join the next generation of change-makers.</p>
                 </div>
 
+                <div class="learn-more drop-shadow">
+                    <a href="#contact"></a>
+                    <h2>LEARN MORE</h2>
+                    <div class="down-arrow"></div>
+                </div>
+            </section>
+            <section id="contact">
+                <div id="socials">
+                    <div id="LinkedIn">
+                        <a href="asdasdasd" target="_blank"></a>
+                        <img class="floating" src="Assets/linkedIn_logo.png"></img>
+                        <h2>LinkedIn</h2>
+                    </div>
+                    <div id="Github">
+                        <a href="asdasdasd" target="_blank"></a>
+                        <img class="floating" src="Assets/github_Logo.png"></img>
+                        <h2>Github</h2>
+                    </div>
+                    <div id="Outlook">
+                        <a href="mailto:email@example.com" target="_blank"></a>
+                        <img class="floating" src="Assets/outlook_Logo.png"></img>
+                        <h2>Outlook</h2>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
