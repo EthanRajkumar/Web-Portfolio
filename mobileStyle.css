@@ -167,6 +167,7 @@ main section {
 }
 
 #profile-photo img {
+    /*opacity: 0;*/
     height: min(50cqw, 87.5%);
     aspect-ratio: 0.866;
     object-fit: contain;
@@ -212,16 +213,13 @@ main section {
     filter: drop-shadow(0px 10px 0px rgb(108, 119, 125));
 }
 
-main section::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.175;
-    background: url("Assets/Techspacebg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+main {
+    background-color: rgb(4, 16, 16);
     z-index: -20;
+}
+
+main > * {
+    z-index: 1;
 }
 
 #about-preview {
@@ -370,7 +368,7 @@ main section::before {
     height: min(calc(25cqh - 20px), calc(20cqw - 20px));
     aspect-ratio: 1;
     border-radius: 50%;
-    background: conic-gradient(green 320deg, rgb(200, 200, 200) 320deg);
+    background: conic-gradient(green 335deg, rgb(200, 200, 200) 335deg);
     position: relative;
     justify-content: center;
     align-items: center;
@@ -502,6 +500,10 @@ main section::before {
     position: relative;
 }
 
+.hidden {
+    display: none;
+}
+
 #socials > *:hover {
     transform: scale(125%);
 }
@@ -554,6 +556,102 @@ main section::before {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.slideshow {
+    grid-area: 2 / 1 / 12 / 9;
+    color:rgb(2, 8, 8);
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: var(--edge-gap);
+    overflow: hidden;
+}
+
+#slideshow-gallery {
+    grid-area: 1 / 1 / 17 / 5;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#slideshow-info {
+    grid-area: 1 / 5 / 17 / 9;
+    background-color: white;
+    overflow: hidden;
+}
+
+.info-slide > *, .info-slide > * > * {
+    color:rgb(2, 8, 8);
+    text-decoration: none;
+    margin-left: calc(2 * var(--edge-gap));
+}
+
+.info-slide li {
+    left: calc(2 * var(--edge-gap));
+}
+
+.info-slide h2 {
+    width: 100%;
+    background-color: rgb(38, 59, 78);
+    color: white;
+    position: relative;
+    padding: 0 calc(1 * var(--edge-gap));
+    margin: 0;
+    margin-bottom: var(--edge-gap);
+}
+
+.info-slide p {
+    margin-bottom: var(--edge-gap);
+}
+
+.left-arrow, .left-arrow:active, .right-arrow, .right-arrow:active {
+    position: absolute;
+    z-index: 10;
+    width: max(25px, 5%);
+    height: max(50px, 12.5%);
+    transition: 0.125s linear;
+    background: linear-gradient(90deg, rgba(38, 59, 78, 1) 0%, transparent 75%);
+    left: var(--edge-gap);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-arrow, .right-arrow:active {
+    background: linear-gradient(-90deg, rgba(38, 59, 78, 1) 0%, transparent 75%);
+    left: 0;
+    right: var(--edge-gap);
+}
+
+.arrow, .left-arrow:active .arrow {
+    width: 85%;
+    height: 85%;
+    background-image: url("Assets/down-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    rotate: 90deg;
+    filter: none;
+    left: -25%;
+    transition: 0.125s linear;
+}
+
+.left-arrow:hover {
+    background: linear-gradient(90deg, rgba(58, 79, 98, 1), transparent 100%);
+}
+
+.left-arrow:hover .arrow {
+    filter: brightness(500%);
+    width: 95%;
+    height: 95%;
+}
+
+.slideshow .img {
+    width: 40vw;
 }
 
 @media screen and (max-width: 700px) {
